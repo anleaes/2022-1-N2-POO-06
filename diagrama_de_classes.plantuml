@@ -1,0 +1,12 @@
+@startuml diagrama
+
+class Pessoa {
+    - nome: string
+    - idade: int
+    - cpf: string
+    - peso: float
+    - altura: float
+    + construtor(nome, idade, cpf, peso, altura)
+}
+
+@enduml
