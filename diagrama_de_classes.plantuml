@@ -21,7 +21,9 @@ class Paciente {
 class Medico {
     - pessoa: Pessoa
     - crm: String
-    + construtor(pessoa, crm)
+    - unidade_de_saude: UnidadeDeSaude
+    - especializacao: String
+    + construtor(pessoa, crm, unidade_de_saude, especializacao)
 }
 
 class Prontuario {
