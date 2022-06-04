@@ -1,12 +1,80 @@
 @startuml diagrama
 
 class Pessoa {
-    - nome: string
-    - idade: int
-    - cpf: string
-    - peso: float
-    - altura: float
+    - nome: String
+    - idade: Int
+    - cpf: String
+    - peso: Float
+    - altura: Float
     + construtor(nome, idade, cpf, peso, altura)
+}
+
+class Paciente {
+    - pessoa: Pessoa
+    - id: String
+    - plano_de_saude: String
+    + construtor(pessoa, id, plano_de_saude)
+}
+
+class Médico{
+    - pessoa: Pessoa
+    - crm: String
+    + construtor(pessoa, crm)
+}
+
+class UnidadeDeSaude {
+    - nome: String
+    - capacidade: String
+    - horario_atendimento: String
+    - tipo: String 
+    + construtor(nome, capacidade, horario_atendimento, tipo)
+}
+
+class Historico {
+    - doenca_previa: String
+    - doenca_tratada: String
+    - historico_familiar: String
+    - grau_parentesco: String
+    + construtor(doenca_previa, doenca_tratada, historico_familiar, grau_parentesco)
+}
+
+class Exames {
+    - data: String
+    - tipo: String
+    - resultado: String
+    - avaliacao: String
+    + construtor(data, tipo, resultado,avaliacao)
+}
+
+class Anamnese {
+    - nivel_consciencia: String
+    - estado_cognitivo: String
+    - humor_afeto: String
+    - linguagem: String
+    + construtor(nivel_consciencia, estado_cognitivo, humor_afeto, linguagem)
+}
+
+class AvaliacaoInicial {
+    - queixa: String
+    - data_inicio: String
+    - sintomas: String
+    - avaliacao: String
+    + construtor(queixa, data_inicio, sintomas, avaliacao)
+}
+
+class Prognostico {
+    - medicacao: Medicacao
+    - exames: Exames
+    - especificadores: String
+    - encaminhamentos: String
+}
+
+class Medicacao {
+    - classe: String
+    - tempo: String
+    - nome: String
+    - motivo: String
+    + construtor(classe, tempo, nome, motivo)
 }
 
 @enduml
