@@ -27,13 +27,12 @@ class Medico {
 }
 
 class Prontuario {
+    - paciente: Paciente
     - historico: Historico
-    - exame: Exame
     - anamnese: Anamnese 
     - avalicaoinicial: AvaliacaoInicial
     - prognostico: Prognostico
-    - medicacao: Medicacao
-    + construtor(historico, exames, anamnese, avalicaoinicial, prognostico, medicacao)
+    + construtor(paciente, historico, anamnese, avalicaoinicial, prognostico)
 }
 class UnidadeDeSaude {
     - nome_unidade_de_saude: String
@@ -91,13 +90,15 @@ class Medicacao {
     + construtor(classe, tempo, nome, motivo)
 }
 
-Pessoa --> Paciente
-Pessoa --> Medico 
+Pessoa <|-- Paciente
+Pessoa <|-- Medico 
+Medico o-- UnidadeDeSaude
+Prontuario *-- Paciente
 Prontuario *-- Historico
-Prontuario *-- Exame
 Prontuario *-- Anamnese
 Prontuario *-- AvaliacaoInicial
 Prontuario *-- Prognostico
-Prontuario *-- Medicacao
+Prognostico o-- Medicacao
+Prognostico o-- Exame
 
 @enduml
