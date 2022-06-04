@@ -16,12 +16,21 @@ class Paciente {
     + construtor(pessoa, id, plano_de_saude)
 }
 
-class Médico{
+class Medico {
     - pessoa: Pessoa
     - crm: String
     + construtor(pessoa, crm)
 }
 
+class Prontuario {
+    - historico: Historico
+    - exames: Exames
+    - anamnese: Anamnese 
+    - avalicaoinicial: AvaliacaoInicial
+    - prognostico: Prognostico
+    - medicacao: Medicacao
+    + construtor(historico, exames, anamnese, avalicaoinicial, prognostico, medicacao)
+}
 class UnidadeDeSaude {
     - nome: String
     - capacidade: String
@@ -76,5 +85,14 @@ class Medicacao {
     - motivo: String
     + construtor(classe, tempo, nome, motivo)
 }
+
+Pessoa --> Paciente
+Pessoa --> Medico 
+Prontuario *-- Historico
+Prontuario *-- Exames
+Prontuario *-- Anamnese
+Prontuario *-- AvaliacaoInicial
+Prontuario *-- Prognostico
+Prontuario *-- Medicacao
 
 @enduml
