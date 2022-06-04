@@ -28,7 +28,7 @@ class Medico {
 
 class Prontuario {
     - historico: Historico
-    - exames: Exames
+    - exame: Exame
     - anamnese: Anamnese 
     - avalicaoinicial: AvaliacaoInicial
     - prognostico: Prognostico
@@ -51,12 +51,12 @@ class Historico {
     + construtor(doenca_previa, doenca_tratada, historico_familiar, grau_parentesco)
 }
 
-class Exames {
+class Exame {
     - data: String
     - tipo: String
     - resultado: String
     - avaliacao: String
-    + construtor(data, tipo, resultado,avaliacao)
+    + construtor(data, tipo, resultado, avaliacao)
 }
 
 class Anamnese {
@@ -77,9 +77,10 @@ class AvaliacaoInicial {
 
 class Prognostico {
     - medicacao: Medicacao
-    - exames: Exames
+    - exame: Exame
     - especificadores: String
     - encaminhamentos: String
+    + construtor(medicacao, exames, especificadores, encaminhamentos)
 }
 
 class Medicacao {
@@ -93,7 +94,7 @@ class Medicacao {
 Pessoa --> Paciente
 Pessoa --> Medico 
 Prontuario *-- Historico
-Prontuario *-- Exames
+Prontuario *-- Exame
 Prontuario *-- Anamnese
 Prontuario *-- AvaliacaoInicial
 Prontuario *-- Prognostico
