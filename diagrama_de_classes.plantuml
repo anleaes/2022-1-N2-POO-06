@@ -11,9 +11,11 @@ class Pessoa {
 
 class Paciente {
     - pessoa: Pessoa
-    - id: String
+    - prontuario: Prontuario
+    - id_paciente: int
     - plano_de_saude: String
-    + construtor(pessoa, id, plano_de_saude)
+    - email: String
+    + construtor(pessoa, prontuario, id_paciente, plano_de_saude, email)
 }
 
 class Medico {
@@ -32,11 +34,11 @@ class Prontuario {
     + construtor(historico, exames, anamnese, avalicaoinicial, prognostico, medicacao)
 }
 class UnidadeDeSaude {
-    - nome: String
+    - nome_unidade_de_saude: String
     - capacidade: String
     - horario_atendimento: String
     - tipo: String 
-    + construtor(nome, capacidade, horario_atendimento, tipo)
+    + construtor(nome_unidade_de_saude, capacidade, horario_atendimento, tipo)
 }
 
 class Historico {
