@@ -1,3 +1,10 @@
+from historico import Historico
+from exames import Exames
+from anamnese import Anamnese
+from avaliacaoinicial import Avaliacaoinicial
+from prognostico import Prognostico 
+from medicacao import Medicacao
+
 class Prontuario: 
 
     def __init__(self, historico, exames, anamnese, avalicaoinicial, prognostico, medicacao):
