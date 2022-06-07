@@ -1,7 +1,7 @@
 class Prontuario: 
 
-    def __init__(self, cliente, historico, anamnese, avalicaoinicial, prognostico):
-        self._cliente = cliente
+    def __init__(self, paciente, historico, anamnese, avalicaoinicial, prognostico):
+        self._paciente = paciente
         self._historico = historico
         self._anamnese = anamnese
         self._avaliacaoinicial = avalicaoinicial
