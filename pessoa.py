@@ -1,17 +1,17 @@
-class Pessoa():
+class Pessoa:
 
     def __init__(self, nome, idade, cpf, peso, altura):
-        self.nome = nome
-        self.idade = idade
-        self.cpf = cpf
-        self.peso = peso
-        self.altura = altura
+        self._nome = nome
+        self._idade = idade
+        self._cpf = cpf
+        self._peso = peso
+        self._altura = altura
 
     def validar_cpf(cpf=None):
         if cpf is not None:
-            return True
-            print ("cpf válido")
+            return print ("cpf válido")
+
         else:
-            return False
-            print("cpf inválido")
+            return print("cpf inválido")
+            
     
