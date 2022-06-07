@@ -11,32 +11,35 @@ class Pessoa {
 
 class Paciente {
     - pessoa: Pessoa
-    - id: String
+    - prontuario: Prontuario
+    - id_paciente: int
     - plano_de_saude: String
-    + construtor(pessoa, id, plano_de_saude)
+    - email: String
+    + construtor(pessoa, prontuario, id_paciente, plano_de_saude, email)
 }
 
 class Medico {
     - pessoa: Pessoa
     - crm: String
-    + construtor(pessoa, crm)
+    - unidade_de_saude: UnidadeDeSaude
+    - especializacao: String
+    + construtor(pessoa, crm, unidade_de_saude, especializacao)
 }
 
 class Prontuario {
+    - paciente: Paciente
     - historico: Historico
-    - exames: Exames
     - anamnese: Anamnese 
     - avalicaoinicial: AvaliacaoInicial
     - prognostico: Prognostico
-    - medicacao: Medicacao
-    + construtor(historico, exames, anamnese, avalicaoinicial, prognostico, medicacao)
+    + construtor(paciente, historico, anamnese, avalicaoinicial, prognostico)
 }
 class UnidadeDeSaude {
-    - nome: String
+    - nome_unidade_de_saude: String
     - capacidade: String
     - horario_atendimento: String
     - tipo: String 
-    + construtor(nome, capacidade, horario_atendimento, tipo)
+    + construtor(nome_unidade_de_saude, capacidade, horario_atendimento, tipo)
 }
 
 class Historico {
@@ -47,12 +50,12 @@ class Historico {
     + construtor(doenca_previa, doenca_tratada, historico_familiar, grau_parentesco)
 }
 
-class Exames {
+class Exame {
     - data: String
     - tipo: String
     - resultado: String
     - avaliacao: String
-    + construtor(data, tipo, resultado,avaliacao)
+    + construtor(data, tipo, resultado, avaliacao)
 }
 
 class Anamnese {
@@ -73,9 +76,10 @@ class AvaliacaoInicial {
 
 class Prognostico {
     - medicacao: Medicacao
-    - exames: Exames
+    - exame: Exame
     - especificadores: String
     - encaminhamentos: String
+    + construtor(medicacao, exames, especificadores, encaminhamentos)
 }
 
 class Medicacao {
@@ -86,13 +90,15 @@ class Medicacao {
     + construtor(classe, tempo, nome, motivo)
 }
 
-Pessoa --> Paciente
-Pessoa --> Medico 
+Pessoa <|-- Paciente
+Pessoa <|-- Medico 
+Medico o-- UnidadeDeSaude
+Prontuario *-- Paciente
 Prontuario *-- Historico
-Prontuario *-- Exames
 Prontuario *-- Anamnese
 Prontuario *-- AvaliacaoInicial
 Prontuario *-- Prognostico
-Prontuario *-- Medicacao
+Prognostico o-- Medicacao
+Prognostico o-- Exame
 
 @enduml
