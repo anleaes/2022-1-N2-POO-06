@@ -5,4 +5,5 @@ class Paciente:
         self.prontuario = prontuario
         self.id_paciente = id_paciente
         self.plano_de_saude = plano_de_saude
-        
+
+#pacienteT = Paciente(pessoaT, prontuario1, "001", "Plano UniRitter Gold" )  

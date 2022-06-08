@@ -5,4 +5,6 @@ class Prognostico:
         self.exame = exame
         self.especificadores = especificadores
         self.encaminhamentos = encaminhamentos
-        
+
+
+#prognosticoT = Prognostico(medicacao1, exame1, "Crônico", "Encaminhado atráves do DrLaureate")

@@ -5,3 +5,5 @@ class Medicacao:
         self.tempo = tempo
         self.nome = nome
         self.motivo = motivo
+
+#medicacao1 = Medicacao("Analgésico", "3 a 5 vezes ao dia", "Paracetamol", "Gripe ou resfriado")

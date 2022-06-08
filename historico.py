@@ -5,4 +5,6 @@ class Historico:
         self.doenca_tratada = doenca_tratada
         self.historico_familiar = historico_familiar
         self.grau_parentesco = grau_parentesco
-        
+
+
+#historicoT = Historico("Câncer de pele", "Cirurgia para remoção - ÊXITO", "Sem histórico", "Nenhum")
