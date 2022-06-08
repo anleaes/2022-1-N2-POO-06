@@ -5,4 +5,6 @@ class Exame:
         self.tipo = tipo
         self.resultado = resultado
         self.avaliacao = avaliacao
-        
+
+
+#exame1 = Exame("07/02/21", "Ressonancia", "Inflamação no estômago", "Precisa operar urgentemente")
