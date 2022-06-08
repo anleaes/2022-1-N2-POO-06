@@ -10,7 +10,6 @@ class Pessoa:
     def validar_cpf(cpf=None):
         if cpf is not None:
             return print ("cpf válido")
-
         else:
             return print("cpf inválido")
             

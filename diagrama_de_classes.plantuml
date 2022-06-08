@@ -1,94 +1,97 @@
 @startuml diagrama
 
+
 class Pessoa {
-    - nome: String
-    - idade: Int
-    - cpf: String
-    - peso: Float
-    - altura: Float
+    + nome: String
+    + idade: Int
+    + cpf: String
+    + peso: Float
+    + altura: Float
     + construtor(nome, idade, cpf, peso, altura)
 }
 
 class Paciente {
-    - pessoa: Pessoa
-    - prontuario: Prontuario
-    - id_paciente: int
-    - plano_de_saude: String
-    - email: String
+    + pessoa: Pessoa
+    + prontuario: Prontuario
+    + id_paciente: int
+    + plano_de_saude: String
+    + email: String
     + construtor(pessoa, prontuario, id_paciente, plano_de_saude, email)
 }
 
 class Medico {
-    - pessoa: Pessoa
-    - crm: String
-    - unidade_de_saude: UnidadeDeSaude
-    - especializacao: String
+    + pessoa: Pessoa
+    + crm: String
+    + unidade_de_saude: UnidadeDeSaude
+    + especializacao: String
     + construtor(pessoa, crm, unidade_de_saude, especializacao)
 }
 
 class Prontuario {
-    - paciente: Paciente
-    - historico: Historico
-    - anamnese: Anamnese 
-    - avalicaoinicial: AvaliacaoInicial
-    - prognostico: Prognostico
+    + paciente: Paciente
+    + historico: Historico
+    + anamnese: Anamnese 
+    + avalicaoinicial: AvaliacaoInicial
+    + prognostico: Prognostico
     + construtor(paciente, historico, anamnese, avalicaoinicial, prognostico)
 }
 class UnidadeDeSaude {
-    - nome_unidade_de_saude: String
-    - capacidade: String
-    - horario_atendimento: String
-    - tipo: String 
+    + nome_unidade_de_saude: String
+    + capacidade: String
+    + horario_atendimento: String
+    + tipo: String 
     + construtor(nome_unidade_de_saude, capacidade, horario_atendimento, tipo)
 }
 
 class Historico {
-    - doenca_previa: String
-    - doenca_tratada: String
-    - historico_familiar: String
-    - grau_parentesco: String
+    + doenca_previa: String
+    + doenca_tratada: String
+    + historico_familiar: String
+    + grau_parentesco: String
     + construtor(doenca_previa, doenca_tratada, historico_familiar, grau_parentesco)
 }
 
 class Exame {
-    - data: String
-    - tipo: String
-    - resultado: String
-    - avaliacao: String
+    + data: String
+    + tipo: String
+    + resultado: String
+    + avaliacao: String
     + construtor(data, tipo, resultado, avaliacao)
 }
 
 class Anamnese {
-    - nivel_consciencia: String
-    - estado_cognitivo: String
-    - humor_afeto: String
-    - linguagem: String
+    + nivel_consciencia: String
+    + estado_cognitivo: String
+    + humor_afeto: String
+    + linguagem: String
     + construtor(nivel_consciencia, estado_cognitivo, humor_afeto, linguagem)
 }
 
 class AvaliacaoInicial {
-    - queixa: String
-    - data_inicio: String
-    - sintomas: String
-    - avaliacao: String
+    + queixa: String
+    + data_inicio: String
+    + sintomas: String
+    + avaliacao: String
     + construtor(queixa, data_inicio, sintomas, avaliacao)
 }
 
 class Prognostico {
-    - medicacao: Medicacao
-    - exame: Exame
-    - especificadores: String
-    - encaminhamentos: String
+    + medicacao: Medicacao
+    + exame: Exame
+    + especificadores: String
+    + encaminhamentos: String
     + construtor(medicacao, exames, especificadores, encaminhamentos)
 }
 
 class Medicacao {
-    - classe: String
-    - tempo: String
-    - nome: String
-    - motivo: String
+    + classe: String
+    + tempo: String
+    + nome: String
+    + motivo: String
     + construtor(classe, tempo, nome, motivo)
 }
+
+
 
 Pessoa <|-- Paciente
 Pessoa <|-- Medico 
