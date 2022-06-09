@@ -6,8 +6,8 @@ from prognostico import Prognostico
 
 class Prontuario: 
 
-    def __init__(self, paciente, historico, anamnese, avalicaoinicial, prognostico):
-        self.paciente = paciente
+    def __init__(self, historico, anamnese, avalicaoinicial, prognostico):
+        #self.paciente = paciente
         self.historico = historico
         self.anamnese = anamnese
         self.avaliacaoinicial = avalicaoinicial
