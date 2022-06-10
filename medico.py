@@ -1,3 +1,4 @@
+from paciente import Paciente
 from pessoa import Pessoa
 class Medico(Pessoa):
     
@@ -17,7 +18,7 @@ class Medico(Pessoa):
         print('Pacientes:')
         for paciente in self.pacientes:
             print(paciente.id_paciente, paciente.nome)
-
+    
     def get_paciente(self, id):
         for paciente in self.pacientes:
             if id == paciente.id_paciente:
@@ -25,7 +26,22 @@ class Medico(Pessoa):
 
     def get_numero_pacientes(self):
         return self.numero_de_pacientes
-    
 
+    def cadastro_paciente(self):
+        nome_paciente = input('Digite o nome do paciente: ')
+        idade_paciente = int(input('Digite a idade do paciente: '))
+        cpf_paciente = input('Digite o CPF do pac3iente: ')
+        peso_paciente = float(input('Digite o peso do paciente: '))
+        altura_paciente = float(input('Digite a altura do paciente: '))
+        plano_de_saude_paciente = input('Digite qual o plano de saúde do paciente: ')
+        self.pacientes.append(Paciente(nome_paciente, idade_paciente, cpf_paciente, peso_paciente, altura_paciente, self.numero_de_pacientes+1, plano_de_saude_paciente))
+        self.numero_de_pacientes += 1
+    
+    #verificar depois
+    def verify_if_id_exists(self):
+            if id <= self.get_numero_pacientes() and id > 0:
+                return True
+            else:
+                return False
 
 #medico1 = Medico("Joao", 45, '5423123214', 80, 1.76, 'crm', 'unidade de saude', 'especializacao')

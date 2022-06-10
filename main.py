@@ -16,9 +16,9 @@ medicacao1 = Medicacao("Analgésico", "3 a 5 vezes ao dia", "Paracetamol", "Grip
 exame1 = Exame("07/02/21", "Ressonancia", "Inflamação no estômago", "Precisa operar urgentemente")
 prognosticoT = Prognostico(medicacao1, exame1, "Crônico", "Encaminhado atráves do DrLaureate")
 prontuario1 = Prontuario(historico1, anam_paci_T, av_ini_paci_T, prognosticoT)
-pacienteT = Paciente("Thales", 23, '123456789', 76, 1.73, prontuario1, 1, "Plano UniRitter Gold" )
+pacienteT = Paciente("Thales", 23, '123456789', 76, 1.73, 1, "Plano UniRitter Gold" )
 medico1 = Medico("Joao", 45, '5423123214', 80, 1.76, 'crm', 'unidade de saude', 'especializacao')
-pacienteK = Paciente("Kleyton", 21, '3214123124', 56, 1.62, prontuario1, 2, "Plano UniRitter Platinum" )
+pacienteK = Paciente("Kleyton", 21, '3214123124', 56, 1.62, 2, "Plano UniRitter Platinum" )
 
 
 #vou fazer depois a opção '1' de cadastrar os pacientes
@@ -34,17 +34,16 @@ while menu_inicial:
 
     resposta_menu_inicial = input('1 - Cadastrar paciente\n2 - Ver pacientes\n3 - Selecionar paciente cadastrado\n4 - Sair do sistema\nSelecione uma ação: ')
     if resposta_menu_inicial == '1':
-        print('aqui vai a parte de cadastrar um paciente')
+        print('\nCadastrando novo paciente...\n')
+        medico1.cadastro_paciente()
     elif resposta_menu_inicial == '2':
         medico1.print_pacientes()
     elif resposta_menu_inicial == '3':
         medico1.print_pacientes()
-        resposta_id = 99 #solução paliativa, depois arrumo
-        while resposta_id > medico1.get_numero_pacientes() or resposta_id < 1:
+        #arrumar
+        '''while resposta_id > medico.get_numero_pacientes() or resposta_id < 1:
             resposta_id = int(input('Digite o ID do paciente: '))
-            if resposta_id > medico1.get_numero_pacientes() or resposta_id < 1:
-                print('Input invalido.')
-        medico1.get_paciente(resposta_id)
+        medico1.get_paciente(resposta_id)'''
         # vou fazer aqui o menu de mexer no prontuário do paciente que acabou de ser selecionado
     elif resposta_menu_inicial == '4':
         menu_inicial = False
