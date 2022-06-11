@@ -23,6 +23,7 @@ class Medico(Pessoa):
         for paciente in self.pacientes:
             if id == paciente.id_paciente:
                 print(f'paciente {paciente.nome} selecionado.')
+                return self.pacientes.index(paciente)
 
     def get_numero_pacientes(self):
         return self.numero_de_pacientes
@@ -37,11 +38,22 @@ class Medico(Pessoa):
         self.pacientes.append(Paciente(nome_paciente, idade_paciente, cpf_paciente, peso_paciente, altura_paciente, self.numero_de_pacientes+1, plano_de_saude_paciente))
         self.numero_de_pacientes += 1
     
-    #verificar depois
-    def verify_if_id_exists(self):
-            if id <= self.get_numero_pacientes() and id > 0:
-                return True
-            else:
-                return False
+    def verify_if_id_exists(self, id):
+        if id <= self.get_numero_pacientes() and id > 0:
+            return True
+        else:
+            return False
+    
+    def get_id(self):
+        while True:
+            id = int(input('Digite o ID do paciente: '))
+            id_verified = self.verify_if_id_exists(id)
+            if id_verified:
+                return id
+        
+    def get_nome_paciente(self, paciente_selecionado):
+        return self.pacientes[paciente_selecionado].nome
+
+    
 
 #medico1 = Medico("Joao", 45, '5423123214', 80, 1.76, 'crm', 'unidade de saude', 'especializacao')
