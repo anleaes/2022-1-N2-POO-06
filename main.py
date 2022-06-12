@@ -49,38 +49,31 @@ while menu_inicial:
         cadastro1.print_pacientes_cadastrados()
         id_paciente_selecionado = medico1.get_id()
         paciente_selecionado = medico1.get_paciente(id_paciente_selecionado)
-        print(paciente_selecionado.nome)
-        print(paciente_selecionado.idade)
-        print('teste nome: ', medico1.get_nome_paciente(paciente_selecionado))
+
         menu_paciente = True
         while menu_paciente:
-            print('acho q aqui da pra fazer os metodos no paciente\n')
             print('-- Paciente', medico1.get_nome_paciente(paciente_selecionado), '--')
             resposta_menu_paciente = input('\n1 - Cadastrar prontuario do paciente\n2 - Ver prontuario\n3 - Adicionar historico\n4 - Adicionar anamnese\n5 - Adicionar avaliacao inicial\n6 - Adicionar prognostico\n7 - Voltar ao menu anterior\n8 - Sair do sistema\nSelecione uma ação: ')
             if resposta_menu_paciente == '1':
-                print('\nCadastrando prontuario do paciente...\n')
-                cadastro1.cadastrar_prontuario(paciente_selecionado)
-                print('paciente. prontuario: ', paciente_selecionado.prontuario)
-                print('paciente historico: ', paciente_selecionado.prontuario.historico)
-                print('paciente historico doenca previa: ', paciente_selecionado.prontuario.historico.doenca_previa)
-                #print(paciente_selecionado.prontuario.historico.grau_parentesco)
+                if cadastro1.verify_prontuario(paciente_selecionado):
+                    print('Paciente já tem prontuário cadastrado.')
+                else:
+                    print('Prontuario cadastrado!')
             elif resposta_menu_paciente == '2':
-                if paciente_selecionado.prontuario == None:
-                    print('Paciente selecionado ainda nao possui prontuario cadastrado\nDeve ser feito o cadastro para prosseguir:')
-                    paciente_selecionado.cadastrar_prontuario()
-                print('mostrar todo prontuario (se o paciente ainda n tiver prontuario (=None) perguntar se gostaria de cadastrar (usar funcao do menu de cadastrar))')
-                print('teste prontuario: ')
-                print('teste print historico:')
-                paciente_selecionado.print_teste()
+                if cadastro1.verify_prontuario(paciente_selecionado):
+                    paciente_selecionado.print_prontuario()
             elif resposta_menu_paciente == '3':
-                print('adicionar historico (ver lógica pra quando ainda nao tiver historico (None) e pra quando ja tiver -> concatenar string informada nos atributos, tipo:\nHistorico:\n- Doencas previas:\nCONCATENAR AQUI A STRING\n "adicionar doencas previas" = concatenar string do input no atributo doencas_previas )')
-                print('na parte de pegar o input, da pra tentar concatenar uma quebra de linha depois de pegar o input: x = input("digite: ") + "\\n"')
+                 if cadastro1.verify_prontuario(paciente_selecionado):
+                    paciente_selecionado.adicionar_ao_historico()
             elif resposta_menu_paciente == '4':
-                print('adicionar anamnese')
+                 if cadastro1.verify_prontuario(paciente_selecionado):
+                    paciente_selecionado.adicionar_a_anamnese()
             elif resposta_menu_paciente == '5':
-                print('adicionar avaliacao inicial')
+                if cadastro1.verify_prontuario(paciente_selecionado):
+                    paciente_selecionado.adicionar_a_avaliacao_inicial()
             elif resposta_menu_paciente == '6':
-                print('adicionar prognostico')
+                if cadastro1.verify_prontuario(paciente_selecionado):
+                    paciente_selecionado.adicionar_ao_prognostico()
             elif resposta_menu_paciente == '7':
                 print('\nBem-vindo ao sistema X')
                 break

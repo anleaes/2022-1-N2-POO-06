@@ -35,9 +35,8 @@ class Cadastro:
         for paciente in self.pacientes:
             print(paciente.id_paciente, paciente.nome)
     
-
-
     def cadastrar_prontuario(self, paciente):
+        print('\nCadastrando prontuario do paciente...\n')
         print('== HISTORICO ==')
         historico = Historico.create_historico(self)
         print('== ANAMNESE ==')
@@ -47,3 +46,11 @@ class Cadastro:
         print('== PROGNOSTICO ==')
         prognostico = Prognostico.create_prognostico(self)
         paciente.prontuario = (Prontuario(paciente, historico, anamnese, avaliacao_inicial, prognostico))
+
+    def verify_prontuario(self, paciente):
+        if paciente.prontuario == None:
+            print('Paciente selecionado ainda nao possui prontuario cadastrado\nDeve ser feito o cadastro para prosseguir:')
+            self.cadastrar_prontuario(paciente)
+            return False
+        else:
+            return True
