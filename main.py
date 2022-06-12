@@ -9,39 +9,34 @@ from prontuario import Prontuario
 from medico import Medico
 from cadastro import Cadastro
 
-
+# instanciando os objetos
 historico1 = Historico("Câncer de pele", "Cirurgia para remoção - ÊXITO", "Sem histórico", "Nenhum")
 anam_paci_T = Anamnese("Vigil", "Perda de memória recente", "Raiva e agressividade" ,"Fala em alto volume e com rapidez")
 av_ini_paci_T = AvaliacaoInicial("Dores de cabeça", "07/06/22", "Febre, dor atrás dos olhos e tosse", "Suspeita de covid")
-medicacao1 = Medicacao("Analgésico", "3 a 5 vezes ao dia", "Paracetamol", "Gripe ou resfriado")
-exame1 = Exame("07/02/21", "Ressonancia", "Inflamação no estômago", "Precisa operar urgentemente")
-prognosticoT = Prognostico(medicacao1, exame1, "Crônico", "Encaminhado atráves do DrLaureate")
+prognosticoT = Prognostico("Analgésico", "3 a 5 vezes ao dia", "Paracetamol", "Gripe ou resfriado", "07/02/21", "Ressonancia", "Inflamação no estômago", "Precisa operar urgentemente", "Crônico", "Encaminhado atráves do DrLaureate")
 pacienteT = Paciente("Thales", 23, '123456789', 76, 1.73, 1, "Plano UniRitter Gold" )
 prontuario1 = Prontuario(pacienteT, historico1, anam_paci_T, av_ini_paci_T, prognosticoT)
 medico1 = Medico("Joao", 45, '5423123214', 80, 1.76, 'crm', 'unidade de saude', 'especializacao')
 pacienteK = Paciente("Kleyton", 21, '3214123124', 56, 1.62, 2, "Plano UniRitter Platinum" )
-
 cadastro1 = Cadastro(medico1)
-medico1.adicionar_cadastro(cadastro1)
-pacienteT.prontuario = prontuario1
 
-#vou fazer depois a opção '1' de cadastrar os pacientes
-#medico1.inserir_paciente(pacienteT)
-#medico1.inserir_paciente(pacienteK)
+#cadastrando objetos para usar de exemplo 
+
+medico1.adicionar_cadastro(cadastro1)
+pacienteT.adicionar_prontuario(prontuario1)
+
 cadastro1.inserir_paciente(pacienteT)
 cadastro1.inserir_paciente(pacienteK)
 
 
 
-cadastro1.print_pacientes_cadastrados()
-print('Bem-vindo ao sistema X')
+print('Bem-vindo ao sistema Thales&Gabriel')
 
 menu_inicial = True
 while menu_inicial:
 
-    resposta_menu_inicial = input('1 - Cadastrar paciente\n2 - Ver pacientes\n3 - Selecionar paciente cadastrado\n4 - Sair do sistema\nSelecione uma ação: ')
+    resposta_menu_inicial = input('\n1 - Cadastrar paciente\n2 - Ver pacientes\n3 - Selecionar paciente cadastrado\n4 - Sair do sistema\nSelecione uma ação: ')
     if resposta_menu_inicial == '1':
-        print('\nCadastrando novo paciente...\n')
         cadastro1.cadastrar_paciente()
     elif resposta_menu_inicial == '2':
         cadastro1.print_pacientes_cadastrados()
@@ -52,7 +47,7 @@ while menu_inicial:
 
         menu_paciente = True
         while menu_paciente:
-            print('-- Paciente', medico1.get_nome_paciente(paciente_selecionado), '--')
+            print('\n-- Paciente', medico1.get_nome_paciente(paciente_selecionado), '--')
             resposta_menu_paciente = input('\n1 - Cadastrar prontuario do paciente\n2 - Ver prontuario\n3 - Adicionar historico\n4 - Adicionar anamnese\n5 - Adicionar avaliacao inicial\n6 - Adicionar prognostico\n7 - Voltar ao menu anterior\n8 - Sair do sistema\nSelecione uma ação: ')
             if resposta_menu_paciente == '1':
                 if cadastro1.verify_prontuario(paciente_selecionado):

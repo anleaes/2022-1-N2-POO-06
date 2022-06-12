@@ -28,5 +28,5 @@ class Historico:
         print(f'\nHistorico familiar:\n- {self.historico_familiar}')
         print(f'\nGrau parentesco:\n- {self.grau_parentesco}')
         
-
+#objeto teste:
 #historicoT = Historico("Câncer de pele", "Cirurgia para remoção - ÊXITO", "Sem histórico", "Nenhum")

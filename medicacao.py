@@ -6,12 +6,21 @@ class Medicacao:
         self.nome = nome
         self.motivo = motivo
 
-    def create_medicacao(self):
-        print('== MEDICACAO == ')
-        classe = input('Informe o campo classe: ')
-        tempo = input('Informe o campo tempo: ')
-        nome = input('Informe o campo nome: ')
-        motivo = input('Informe o campo motivo: ')
-        return Medicacao(classe, tempo, nome, motivo)
+    def adicionar_a_medicacao(self):
+        print('\t== MEDICACAO == ')
+        self.classe += '\n- ' + input("Informe classe que deseja adicionar ao prontuario: ")
+        self.tempo += '\n- ' + input("Informe tempo que deseja adicionar ao prontuario: ")
+        self.nome += '\n- ' + input("Informe nome do medicamento que deseja adicionar ao prontuario: ")
+        self.motivo += '\n- ' + input("Informe motivo que deseja adicionar ao prontuario: ")
 
+
+    def print_medicacao(self):
+        print('== MEDICACAO == ')
+        print(f'\nClasse:\n- {self.classe}')
+        print(f'\nTempo:\n- {self.tempo}')
+        print(f'\nNome:\n- {self.nome}')
+        print(f'\nMotivo:\n- {self.motivo}')
+        
+
+#objeto teste:
 #medicacao1 = Medicacao("Analgésico", "3 a 5 vezes ao dia", "Paracetamol", "Gripe ou resfriado")

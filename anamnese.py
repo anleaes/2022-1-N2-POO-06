@@ -28,4 +28,5 @@ class Anamnese:
         print(f'\nLinguagem:\n- {self.linguagem}')
 
 
+#objeto teste:
 #anam_paci_T = Anamnese("Vigil", "Perda de memória recente", "Raiva e agressividade" ,"Fala em alto volume e com rapidez")

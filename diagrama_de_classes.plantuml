@@ -35,13 +35,14 @@ class Prontuario {
     + prognostico: Prognostico
     + construtor(paciente, historico, anamnese, avalicaoinicial, prognostico)
 }
-class UnidadeDeSaude {
-    + nome_unidade_de_saude: String
-    + capacidade: String
-    + horario_atendimento: String
-    + tipo: String 
-    + construtor(nome_unidade_de_saude, capacidade, horario_atendimento, tipo)
+
+class cadastro {
+    + medico: Medico
+    + pacientes: []
+    + numero_de_pacientes_cadastrados: Int
+    + construtor(medico)
 }
+
 
 class Historico {
     + doenca_previa: String
