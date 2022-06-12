@@ -29,6 +29,6 @@ class AvaliacaoInicial:
         print(f'\nAvaliacao:\n- {self.avaliacao}')
         
 
-
+#objeto teste
 #av_ini_paci_T = AvaliacaoInicial("Dores de cabeça", "07/06/22", "Febre, dor atrás dos olhos e tosse", "Suspeita de covid")
 

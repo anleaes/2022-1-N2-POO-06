@@ -33,10 +33,12 @@ class Medico(Pessoa):
             id = int(input('Digite o ID do paciente: '))
             if self.verify_if_id_exists(id):
                 return id
+            print('Input invalido.')
         
     def get_nome_paciente(self, paciente_selecionado):
         return paciente_selecionado.nome
 
 
+#objeto teste:
 #medico1 = Medico("Joao", 45, '5423123214', 80, 1.76, 'crm', 'unidade de saude', 'especializacao')
 

@@ -1,12 +1,10 @@
-from asyncio import ProactorEventLoop
 from paciente import Paciente
 from prontuario import Prontuario
 from historico import Historico
 from anamnese import Anamnese
 from avaliacao_inicial import AvaliacaoInicial
 from prognostico import Prognostico
-from medicacao import Medicacao
-from exame import Exame
+
 
 class Cadastro:
 
@@ -17,9 +15,10 @@ class Cadastro:
 
     
     def cadastrar_paciente(self):
+        print('\nCadastrando novo paciente...\n')
         nome_paciente = input('Digite o nome do paciente: ')
         idade_paciente = int(input('Digite a idade do paciente: '))
-        cpf_paciente = input('Digite o CPF do pac3iente: ')
+        cpf_paciente = input('Digite o CPF do paciente: ')
         peso_paciente = float(input('Digite o peso do paciente: '))
         altura_paciente = float(input('Digite a altura do paciente: '))
         plano_de_saude_paciente = input('Digite qual o plano de saúde do paciente: ')
@@ -31,10 +30,10 @@ class Cadastro:
         self.numero_de_pacientes_cadastrados += 1
     
     def print_pacientes_cadastrados(self):
-        print('Pacientes:')
+        print('\nPacientes:')
         for paciente in self.pacientes:
             print(paciente.id_paciente, paciente.nome)
-    
+
     def cadastrar_prontuario(self, paciente):
         print('\nCadastrando prontuario do paciente...\n')
         print('== HISTORICO ==')

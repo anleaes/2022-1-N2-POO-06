@@ -8,6 +8,9 @@ class Paciente(Pessoa):
         self.prontuario = None
 
 
+    def adicionar_prontuario(self, prontuario):
+        self.prontuario = prontuario
+
     def print_prontuario(self):
         self.prontuario.print_prontuario()
     
@@ -15,17 +18,17 @@ class Paciente(Pessoa):
         self.prontuario.historico.adicionar_ao_historico()
 
     def adicionar_a_anamnese(self):
-        self.prontuario.historico.adicionar_a_anamnese()
+        self.prontuario.anamnese.adicionar_a_anamnese()
 
     def adicionar_a_avaliacao_inicial(self):
-        self.prontuario.historico.adicionar_a_avaliacao_inicial()
+        self.prontuario.avaliacao_inicial.adicionar_a_avaliacao_inicial()
     
     def adicionar_ao_prognostico(self):
-        self.prontuario.historico.adicionar_ao_prognostico()
+        self.prontuario.prognostico.adicionar_ao_prognostico()
 
 
 
-
+#objeto teste:
 #pacienteT = Paciente("Thales", 23, 123456789, 76, 1.73, prontuario1, "001", "Plano UniRitter Gold" )
 
 

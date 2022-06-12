@@ -12,6 +12,8 @@ class Pessoa:
             return print ("cpf válido")
         else:
             return print("cpf inválido")
-            
+
+
+#objeto teste:
 #pessoaT = Pessoa("Thales", 23, 123456789, 76, 173)
 #pessoaG = Pessoa("Gabriel", 21, 987654321, 70, 180)
